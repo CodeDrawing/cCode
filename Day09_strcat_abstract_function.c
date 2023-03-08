@@ -15,14 +15,12 @@ void my_strcat(char *pa,char *pb){
 
     }
     *pa='\0';
-
-
 }
 int main(){
 
     char a[]="abkkkkkkkkkcddd";
     char b[]="abkkkkkkkkkcdddabkkkddd123";
     my_strcat(a,b);
-    printf("a= %s",a);
+    printf("a= %s\n",a);
     return 0;
 }
