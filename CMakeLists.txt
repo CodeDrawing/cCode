@@ -23,3 +23,9 @@ add_executable(Day11_bubble_sort_pointer Day11_bubble_sort_pointer.c)
 add_executable(Day11_decompression_string Day11_decompression_string.c)
 add_executable(Day11_test_compression_and_decompression Day11_test_compression_and_decompression.c)
 add_executable(Day12_visit_two_dimension_array Day12_visit_two_dimension_array_use_array_pointer.c)
+
+add_executable(Day13_main Day13_main.c)
+
+add_executable(Day13_add Day13_add.c)
+add_executable(Day13_function_excange_two_number Day13_function_excange_two_number.c)
+add_executable(Day13_exclude_space Day13_exclude_space.c)
