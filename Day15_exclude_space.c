@@ -12,18 +12,17 @@ void exclude_space(char *a){
     char *pa=a,*p_current=a+1;
 
     while(*p_current!='\0'){
-       if(*p_current==' '){
-           p_current++;
-           if(*(pa+1)!=' '){
-               pa++;
-           }
-       }
-       else {
-           pa++;
+       if(pa==' '&&p_current!=' '){
+           printf("pa。。。%c",*pa);
            *pa=*p_current;
+           pa++;
            *p_current=' ';
            p_current++;
+       } else if(pa==' '&& p_current==' '){
+           printf("。。=====。%c",*pa);
+           p_current++;
        }
+
    }
 
 }
