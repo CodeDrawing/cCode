@@ -35,3 +35,5 @@ add_executable(test test.c)
 add_executable(Day15_struct_define Day15_struct_define.c)
 add_executable(Day11_convert_char_to_int Day11_convert_char_to_int.c)
 add_executable(Day15_exclude_space Day15_exclude_space.c)
+
+add_executable(Day16_c_examples03 Day16_c_examples03.c)
