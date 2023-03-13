@@ -9,16 +9,12 @@ int a=0,flag=0;
         flag=0;
             for (int k = 0; k <= sqrt(i+100); ++k) {
                 if(k*k==i){
-                    flag++;
+                    for (int j = 0; j < sqrt(i+268); ++j) {
+                        if(j*j==i){
+                            printf("%d is result\n",i);
+                        }
+                    }
                 };
         }
-        for (int j = 0; j < sqrt(i+268); ++j) {
-            if(j*j==i){
-                flag++;
-            }
-        }
-        if(flag==2){
-            printf("%d is result\n",i);
-        };
     }
 }
