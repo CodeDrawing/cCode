@@ -4,17 +4,20 @@
 #include  <stdio.h>
 #include <math.h>
 int main(){
-int a=0,flag=0;
-    for (int i = 1; i < 1000; ++i) {
-        flag=0;
-            for (int k = 0; k <= sqrt(i+100); ++k) {
-                if(k*k==i){
-                    for (int j = 0; j < sqrt(i+268); ++j) {
-                        if(j*j==i){
-                            printf("%d is result\n",i);
-                        }
-                    }
-                };
+int a[10]={1,2,3,4,5,6,7,8,9,10};
+int m=0,final=0;
+    printf("please input a number :\n");
+scanf("%d",&m);
+    for (int i = 0; i < m; ++i) {
+        final=a[9];
+        for (int j = 9; j >= 1; j--) {
+            a[j]=a[j-1];
         }
+        a[0]=final;
     }
+    printf("result is=");
+    for (int i = 0; i < 10; ++i) {
+        printf("%d ",a[i]);
+    }
+return 0;
 }
