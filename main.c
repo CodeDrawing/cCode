@@ -1,16 +1,19 @@
 #include <stdio.h>
-int main(){
-    int i=101;
-    int a=0,b=0,c=0;
-    while (i<=999){
-        a=i/100;
-        b=(i-a*100)/10;
-        c=i%10;
-        if(a*a*a+b*b*b+c*c*c==i){
-            printf("%d is a daffodil\n",i);
-        }
-        i++;
-    }
 
-   return 0;
+int main(){
+    char *country[5]={"china","japan","italy","french","england"};
+    char *temp=NULL;
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 4; ++j) {
+
+            if(*country[j]>*country[j+1]){
+                temp=country[j];
+                country[j]=country[j+1];
+                country[j+1]=temp;
+            }
+        }
+    }
+    for (int i = 0; i < 5; ++i) {
+        printf("%s ",country[i]);
+    }
 }

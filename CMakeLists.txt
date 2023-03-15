@@ -37,3 +37,6 @@ add_executable(Day11_convert_char_to_int Day11_convert_char_to_int.c)
 add_executable(Day15_exclude_space Day15_exclude_space.c)
 
 add_executable(Day16_c_examples03 Day16_c_examples03.c)
+add_executable(Day17_move_array_by_number Day17_move_array_by_number.c)
+add_executable(Day17_leecode_2169 Day17_leecode_2169.c)
+add_executable(Day17_leecode_2185 Day17_leecode_2185.c)
