@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "outputArray.h"
 int jiecheng(int n){
     if(n>1){
         return n * jiecheng(n-1);
@@ -9,7 +8,9 @@ int jiecheng(int n){
 }
 int main(){
     int result=0;
-    int n=3;
+    int n;
+    printf("please input a number:\n");
+    scanf("%d",&n);
     for (int i = 0; i <= n; ++i) {
         result= result+jiecheng(i);
     }
