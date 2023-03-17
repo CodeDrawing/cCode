@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "outputArray.h"
 //1.将最下面的牌放回原数组最上面
 //2.将最下面的牌放到最上面
 int main(){
