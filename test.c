@@ -1,25 +1,16 @@
 //
 // Created by 84539 on 2023/3/9.
 //
-#include <stdio.h>
-void clear_space(char * p);
-int main(){
-    char a[50]="abcd   dfwedfw  ";
-    clear_space(a);
-    printf("result is %s",a);
-    return 0;
-}
-void clear_space(char * pa){
-    char *q =pa;
-    while (*pa!='\0'){
-        if(*pa!=' '){
-            *q=*pa;
-            pa++;
-            q++;
-        } else{
-            pa++;
-            *q=*pa;
-        }
-    }
-    *q='\0';
-}
+ #include <stdio.h>
+ #define A char *
+ typedef  char * B;
+ int main(int argc, char *argv[])
+ {
+     A a,b;
+     B c,d;
+     printf("a=%ld\n",sizeof(a));
+     printf("b=%ld\n",sizeof(b));
+     printf("c=%ld\n",sizeof(c));
+     printf("d=%ld\n",sizeof(d));
+     return 0;
+ }
