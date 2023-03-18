@@ -37,7 +37,7 @@ int main(){
     //释放指针
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
-            free((*matrix+i)+j);
+            free((*matrix+i));
         }
 
     }
