@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 bool divisorGame(int n){
-    int x=n-1;
+    /*
+     * int x=n-1;
     //-1为alise，1为bob
     int flag=-1;
     while(x<n&&x>0){
@@ -19,6 +21,8 @@ bool divisorGame(int n){
         flag=-1*flag;
 
     }
+     */
+
 
 }
 
