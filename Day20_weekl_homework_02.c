@@ -7,18 +7,18 @@ int main(){
     int (*matrix)[n]=(int *)malloc(sizeof (int)*n);
     for (int i = 0; i < n; ++i) {
         /*
-         * 想的屎山代码，还不对，想复杂了
-         */
-//           if(i+j<=n-1){
-//               *(*(matrix+i)+j)=(n-j-i)*(n-j-i);
-//           }else if(n-j-i==0) {
-//               *(*(matrix + i) + j) = n * n;
-//           }else if(i==j){
-//               *(*(matrix+i)+j)=(n-i+1)*(n-i+1);
-//           }else {
-//               *(*(matrix+i)+j)= abs(n-j-i)*abs(n-j-i);
-//           }
 
+         * 想的屎山代码，还不对，想复杂了
+                  if(i+j<=n-1){
+*              *(*(matrix+i)+j)=(n-j-i)*(n-j-i);
+*           }else if(n-j-i==0) {
+*               *(*(matrix + i) + j) = n * n;
+*           }else if(i==j){
+*              *(*(matrix+i)+j)=(n-i+1)*(n-i+1);
+*           }else {
+*               *(*(matrix+i)+j)= abs(n-j-i)*abs(n-j-i);
+*          }
+         */
         for (int j = 0; j < n; ++j) {
            if(i+j<=n-1){
                *(*(matrix+i)+j)=(n-j-i)*(n-j-i);
@@ -39,7 +39,6 @@ int main(){
         for (int j = 0; j < n; ++j) {
             free((*matrix+i));
         }
-
     }
 }
 

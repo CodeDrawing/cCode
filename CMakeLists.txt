@@ -7,7 +7,7 @@ add_executable(cCode main.c)
 
 add_executable(main main.c)
 
-add_executable(a "Day08_the count of show of number in array.c")
+
 include_directories(outputArray.h)
 
 add_executable(bubble_sort bubble_sort.c)
@@ -58,3 +58,6 @@ add_executable(Day20_week_homework Day20_week_homework.c)
 add_executable(Day20_weekl_homework_02 Day20_weekl_homework_02.c)
 add_executable(Day21_leecode_1025 Day21_leecode_1025.c Day21_leecode_1025.c)
 add_executable(Day22_leecode_1614 Day22_leecode_1614.c)
+add_executable(Day23_exame02 Day23_exame02.c)
+add_executable(Day23_exame03 Day23_exame03.c)
+add_executable(Day22_leecode_206 Day22_leecode_206.c)
