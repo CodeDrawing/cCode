@@ -24,17 +24,21 @@ struct ListNode* current(struct ListNode* node,int i){
 struct ListNode* reverseList(struct ListNode* head){
     struct ListNode *current=head;
     struct ListNode *pre_node=NULL;
-    struct ListNode* next=current->next;
-//    struct ListNode* next=NULL;
-    while (current){
 
+//    struct ListNode *next=current->next;
+    struct ListNode* next=NULL;
+
+    while (current){
+        /**
+         *         printf("current = %p\n",current);
+        printf("next = %p\n",next);
+        printf("=============\n");
+         */
+        next=current->next;
         current->next=pre_node;
         pre_node=current;
         current=next;
-        next=current->next;
-        printf("current = %p\n",current);
-        printf("next = %p\n",next);
-        printf("=============\n");
+
     }
     return pre_node;
 }
