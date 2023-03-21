@@ -61,3 +61,5 @@ add_executable(Day22_leecode_1614 Day22_leecode_1614.c)
 add_executable(Day23_exame02 Day23_exame02.c)
 add_executable(Day23_exame03 Day23_exame03.c)
 add_executable(Day22_leecode_206 Day22_leecode_206.c)
+
+add_executable(Day23_sequence_list Day23_sequence_list.c)
