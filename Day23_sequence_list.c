@@ -45,6 +45,40 @@ int insert_element_by_position(list *head,int pos,list_val val){
     head->last++;
     return 1;//1表示成功
 }
+//按位置删除链表
+int delete_element_by_position(list *head,int pos){
+    if(NULL==head) return -1;
+    if(pos-1>head->last||pos<0) return -1;
+    for (int i = pos-1; i <= head->last; ++i) {
+        head->data[i]=head->data[i+1];
+    }
+    return 1;
+}
+//按位置修改链表数据
+int update_element_by_position(list *head,int pos,list_val val){
+    if(NULL==head) return -1;
+    if(pos-1<=0||pos-1>head->last) return -1;
+    head->data[pos-1]=val;
+    return 1;
+}
+//查询
+int query_element_by_position(list *head,int pos){
+    if(NULL==head) return -1;
+    if(pos-1<0||pos-1>head->last) return -1;
+    return head->data[pos-1];
+}
+
+//查找元素位置
+int query_element_by_value(list *head,list_val val){
+    if(NULL==head) return -1;
+    for (int i = 0; i <=head->last; ++i) {
+        if(head->data[i]==val){
+            return i+1;
+        }
+    }
+    return -1;//没找到
+}
+
 //打印链表
 void print_list(list *head){
     for (int i = 0; i <= head->last; ++i) {
@@ -54,13 +88,28 @@ void print_list(list *head){
 int main(){
     list* head=create_list();
     print_list(head);
-    print_list("\n");
+
     insert_element_by_position(head,0,3);
     insert_element_by_position(head,1,1);
     insert_element_by_position(head,2,6);
-    insert_element_by_position(head,2,0);
+    insert_element_by_position(head,2,5);
     print_list(head);
-    print_list("\n");
+    printf("\n");
+
+    //测试删除
+//    delete_element_by_position(head,1);
+//    delete_element_by_position(head,1);
+//    print_list(head);
+//    printf("\n");
+
+//测试查询
+    int query=query_element_by_position(head,3);
+    printf("%d\n",query);
+
+    //测试查找
+//    int query=query_element_by_value(head,6);
+//    printf("%d\n",query);
+
     return 0;
 }
 
