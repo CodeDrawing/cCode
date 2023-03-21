@@ -13,6 +13,7 @@ void printList(struct ListNode* head) {
     }
     printf("\n");
 }
+
 struct ListNode* current(struct ListNode* node,int i){
     struct ListNode *newNode= (struct ListNode*) malloc(sizeof (struct ListNode));
     newNode->next=node;
@@ -20,27 +21,38 @@ struct ListNode* current(struct ListNode* node,int i){
 
     return newNode;
 }
-
+//迭代
 struct ListNode* reverseList(struct ListNode* head){
     struct ListNode *current=head;
-    struct ListNode *pre_node=NULL;
-
-//    struct ListNode *next=current->next;
-    struct ListNode* next=NULL;
-
+    struct ListNode *pre=NULL;
     while (current){
-        /**
-         *         printf("current = %p\n",current);
-        printf("next = %p\n",next);
-        printf("=============\n");
-         */
-        next=current->next;
-        current->next=pre_node;
-        pre_node=current;
-        current=next;
-
+        struct ListNode *temp=current->next;
+        current->next=pre;
+        pre=current;
+        current=temp;
     }
-    return pre_node;
+    return pre;
+}
+//递归
+
+struct ListNode* reverseListVTwo(struct ListNode* head){
+    if(head==NULL||head->next==NULL){
+        return head;
+    }
+    struct ListNode* newHead= reverseListVTwo(head->next);
+    head->next->next=head;
+    head->next=NULL;
+    return newHead;
+
+//    if (head == NULL || head->next == NULL) {
+//        return head;
+//    }
+//    struct ListNode* newHead = reverseListVTwo(head->next);
+//    head->next->next = head;
+//    head->next = NULL;
+//    return newHead;
+
+
 }
 
 int main(){
@@ -52,7 +64,7 @@ struct ListNode *head= NULL;
     printf("finish construct\n");
     printList(newNode);
     printf("current completely\n");
-    struct ListNode * reversNode=reverseList(newNode);
+    struct ListNode * reversNode=reverseListVTwo(newNode);
     printList(reversNode);
     return 0;
 }

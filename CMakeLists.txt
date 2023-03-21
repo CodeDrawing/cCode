@@ -64,3 +64,4 @@ add_executable(Day22_leecode_206 Day22_leecode_206.c)
 
 add_executable(Day23_sequence_list Day23_sequence_list.c)
 add_executable(Day22_leecode_206_v2 Day23_leecode_206_v2.c)
+add_executable(Day23_leecode_73 Day23_leecode_73.c)
