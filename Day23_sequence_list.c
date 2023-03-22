@@ -67,6 +67,33 @@ int query_element_by_position(list *head,int pos){
     if(pos-1<0||pos-1>head->last) return -1;
     return head->data[pos-1];
 }
+//报错函数
+void error_function(char *a,int line){
+    printf("%s",a);
+}
+//排序（选择排序）
+void sort_list(list *head){
+    int min;
+    int temp;
+    int flag=-1;
+    for (int i = 0; i <= head->last; ++i) {
+        min=head->data[i];
+        temp=0;
+        for (int j = i; j <= head->last ; ++j) {
+            if(min>head->data[j]){
+                min=head->data[j];
+                temp=j;
+                flag=1;
+            }
+        }
+        if(flag==1){
+            head->data[temp]=head->data[i];
+            head->data[i]=min;
+            flag=-1;
+        }
+
+    }
+}
 
 //查找元素位置
 int query_element_by_value(list *head,list_val val){
@@ -86,6 +113,10 @@ void print_list(list *head){
     }
 }
 int main(){
+
+
+    error_function(__func__,__LINE__);
+
     list* head=create_list();
     print_list(head);
 
@@ -103,13 +134,16 @@ int main(){
 //    printf("\n");
 
 //测试查询
-    int query=query_element_by_position(head,3);
-    printf("%d\n",query);
+//    int query=query_element_by_position(head,3);
+//    printf("%d\n",query);
 
     //测试查找
 //    int query=query_element_by_value(head,6);
 //    printf("%d\n",query);
 
+//测试排序
+    sort_list(head);
+    print_list(head);
     return 0;
 }
 
