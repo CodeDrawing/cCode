@@ -80,9 +80,8 @@ bool myHashSetContains(MyHashSet *obj, int key) {
     if(obj->key==key){
         return true;
     }else{
-
+        return false;
     }
-    return false;
 }
 
 void myHashSetFree(MyHashSet *obj) {

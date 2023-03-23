@@ -6,6 +6,15 @@ typedef struct LinkNode {
     int val;
     struct LinkNode *next;
 }linkNode;
+
+//打印链表
+void print_list(linkNode *head) {
+    if (head->next == NULL) return;
+    while (head->next) {
+        head = head->next;
+        printf("%-3d ", head->val);
+    }
+}
 //判断是否为空
 int check_is_null(linkNode *head){
     if(head->next==NULL) return -1;
@@ -40,8 +49,12 @@ int delete_node_by_position( linkNode *head,int pos){
     for (int i = 0; i < pos-1; ++i) {
         head=head->next;
     }
+    linkNode *temp=(linkNode*) malloc(sizeof (linkNode));
+    temp=head->next;
 
     head->next=head->next->next;
+    free(temp);
+    temp=NULL;
     return 1;
 }
 //根据值删除节点
@@ -80,31 +93,24 @@ int insert_node(linkNode * head,int val,int pos){
 }
 //反转链表
 struct ListNode *reverseList(linkNode *head) {
-    linkNode*current = head;
+    linkNode*current = head->next;
     linkNode *pre_node = NULL;
-
-//    struct ListNode *next=current->next;
-    struct ListNode *next = NULL;
-
-    while (current) {
-
-        next = current->next;
+    linkNode *next_node =NULL;
+    free(head);
+    head=NULL;
+    while (current->next) {
+        next_node = current->next;
         current->next = pre_node;
         pre_node = current;
-        current = next;
-
+        current = next_node;
     }
-    return pre_node;
+    next_node->next=pre_node;
+    pre_node=next_node;
+    linkNode * temp= (linkNode*) malloc(sizeof (linkNode));
+    temp->next=pre_node;
+    return temp;
 }
 
-//打印链表
-void print_list(linkNode *head) {
-    if (head->next == NULL) return;
-    while (head->next) {
-        head = head->next;
-        printf("%-3d ", head->val);
-    }
-}
 
 int main() {
     int result=0;
@@ -120,14 +126,16 @@ int main() {
     printf("result = %d\n",result);
 
     printf("delete node by position\n");
-    delete_node_by_position(head,11);
+    delete_node_by_position(head,5);
     print_list(head);
-
 //    insert_node(head,55,10);
 //    print_list(head);
 
 //    delete_node_by_value(head,11);
 //    print_list(head);
+//    printf("\n");
+//    linkNode * aa=reverseList(head);
+//    print_list(aa);
 
     return 0;
 }
