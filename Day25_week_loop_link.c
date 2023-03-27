@@ -64,6 +64,7 @@ void print_loop_link(Loop_link* head){
     }
     printf("\n");
 }
+
 int main(){
     Loop_link *head=create_loop_link();
     int count=count_node_uninclude_head(head);
